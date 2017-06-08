@@ -1,19 +1,14 @@
-const Sequelize = require('sequelize')
-const db = require('../connection')
+const mongoose = require('mongoose')
+mongoose.Promise = require('bluebird')
+const Schema = mongoose.Schema
 
-const Movie = db.define('movie', {
-  title: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  numberOfCopies: {
-    type: Sequelize.INTEGER,
-    allowNull: false
-  },
-  IMDBrating: {
-    type: Sequelize.INTEGER,
-    allowNull: false
-  }
+const movieSchema = new Schema({
+  title: String,
+  numberOfCopies: Number,
+  IMDBrating: Number,
+  imageUrl: String
 })
 
-module.exports = Movie
+const Movies = mongoose.model('Movie', movieSchema)
+
+module.exports = Movies;

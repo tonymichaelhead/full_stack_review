@@ -1,7 +1,16 @@
-const User = require('./models/userModel')
-const Movie = require('./models/movieModel')
-const Snack = require('./models/snackModel')
+const mongoose = require('mongoose')
+const config = require('../config')
 
-User.sync({ force: true })
-Movie.sync({ force: true })
-Snack.sync({ force: true })
+console.log(config.mURI)
+
+mongoose.connect(config.mURI, (err) => {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log('Connected to the blockbuster database')
+  }
+})
+
+const db = mongoose.connection
+
+module.exports = db;

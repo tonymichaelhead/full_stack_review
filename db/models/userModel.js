@@ -1,27 +1,17 @@
-const Sequelize = require('sequelize')
-const db = require('../connection')
+const mongoose = require('mongoose')
+mongoose.Promise = require('bluebird')
+const Schema = mongoose.Schema
 
-const User = db.define('user', {
-  firstName: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }, 
-  lastName: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }, 
-  email: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }, 
-  phoneNumber: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  age: {
-    type: Sequelize.INTEGER,
-    allowNull: false
-  }
+const userSchema = new Schema({
+  firstName: String,
+  lastName: String,
+  email: String,
+  email: Number,
+  phoneNumber: Number,
+  age: Number
 })
 
-module.exports = User
+const Users = mongoose.model('User', userSchema)
+
+module.exports = Users;
+
