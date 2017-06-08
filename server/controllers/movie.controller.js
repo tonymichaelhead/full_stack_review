@@ -17,6 +17,7 @@ module.exports = {
       numberOfCopies: req.body.numberOfCopies,
       IMDBrating: req.body.IMDBrating
     })
+    
     newMovie.save((err) => {
       if (err) {
         console.log(err)
