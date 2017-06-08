@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 const config = require('../config')
 
-console.log(config.mURI)
-
 mongoose.connect(config.mURI, (err) => {
   if (err) {
     console.log(err)
