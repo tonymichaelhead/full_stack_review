@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 
 import Navbar from './components/navbar'
+import MovieList from './components/movieList'
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class App extends Component {
       displayMovies: false
     }
     this.handleMovieClick = this.handleMovieClick.bind(this)
-    this.handleUserClick = this.handleUserClick.bind(this)
+    this.handleAddMovie = this.handleAddMovie.bind(this)
   }
 
   handleMovieClick() {
@@ -22,16 +23,27 @@ class App extends Component {
       .then(movies => {
         this.setState({ 
           displayMovies: true,
-          movies: movies
+          movies: movies.data
         })
       })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  handleAddMovie() {
+
   }
 
   render() {
     return(
       <div>
-        <Navbar handleMovieClick={this.handleMovieClick} />
+        <Navbar 
+          handleMovieClick={this.handleMovieClick} 
+          handleAddMovie={this.handleAddMovie}
+        />
         <div>Welcome to Blockbuster</div>
+        {this.state.displayMovies ? <MovieList movies={this.state.movies}/> : null}
       </div>
     )
   }

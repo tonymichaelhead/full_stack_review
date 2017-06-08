@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-const Navbar = ({ handleUserClick, handleMovieClick }) => (
+const Navbar = ({ handleAddMovie, handleMovieClick }) => (
   <nav>
-    <button className="user-btn" onClick={handleUserClick}>Users</button>
     <button className="movie-btn" onClick={handleMovieClick}>Movies</button>
+    <button className="add-movie-btn" onClick={handleAddMovie}>Add Movie</button>
   </nav>
 )
 
