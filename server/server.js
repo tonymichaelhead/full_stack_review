@@ -11,8 +11,12 @@ const port = 3000
 const db = require('../db/config')
 const blockbusterRouter = require('./router/blockbuster.router')
 
+// depending on which front end framework you're using, 
+// comment out the one you're not using
+app.use(express.static('react-client'))
+// app.use(express.static('angular-client'))
+
 //add middleware
-app.use(express.static('client'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 

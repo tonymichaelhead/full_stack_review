@@ -1,10 +1,10 @@
 const path = require('path');
 
-const SRC_DIR = path.resolve(__dirname, 'client');
-const BUILD_DIR = path.resolve(__dirname, 'client');
+const SRC_DIR = path.resolve(__dirname, 'react-client/src');
+const BUILD_DIR = path.resolve(__dirname, 'react-client');
 
 module.exports = {
-  entry: path.resolve(SRC_DIR, 'client-app.js'),
+  entry: path.resolve(SRC_DIR, 'index.js'),
   output: {
     filename: 'bundle.js',
     path: BUILD_DIR
