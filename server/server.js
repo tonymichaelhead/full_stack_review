@@ -7,12 +7,16 @@ const morgan = require('morgan')
 const app = express()
 
 const port = 3000
+
 const db = require('../db/config')
+const blockbusterRouter = require('./router/blockbuster.router')
 
 //add middleware
 app.use(express.static('client'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use('/api', blockbusterRouter)
 
 app.listen(port, 'localhost', () => {
   console.log('Blockbuster listening on port: ', port)
