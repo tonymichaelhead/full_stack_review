@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
-const Movie = ({ movieData }) => (
+const Movie = (/*TODO: FILL ME IN*/) => (
   <div className="single-movie">
-    <h3>{movieData.title}</h3>
-    <h5>Number of Copies: {movieData.numberOfCopies}</h5>
-    <h5>IMDB Rating: {movieData.IMDBrating}</h5>
+    TODO: FILL ME IN
   </div>
 )
 

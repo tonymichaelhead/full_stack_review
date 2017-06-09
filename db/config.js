@@ -1,14 +1,7 @@
+//TODO: set up your database configuration and connection here
+
 const Sequelize = require('sequelize')
-const config = require('../config')
+// ** remember to hide your db config information!
+const config = require('../config') 
 
-const db = new Sequelize(config.dbURL)
-
-db.authenticate()
-  .then(() => {
-    console.log('Successfully connected to the blockbuster database')
-  })
-  .catch((err) => {
-    console.log('Error connecting: ', err)
-  })
-
-module.exports = db
+// **other files will need access to information in here**

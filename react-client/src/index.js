@@ -14,31 +14,25 @@ class App extends Component {
       displayMovies: false,
       displayAddMovieForm: false
     }
-    this.handleMovieClick = this.handleMovieClick.bind(this)
-    this.handleDisplayAddMovie = this.handleDisplayAddMovie.bind(this)
+    // TODO: fill in your function binds (if necessary)
+
   }
 
   handleMovieClick() {
-    let url = 'http://localhost:3000/api/movies'
+    let url = /*TODO: fill me in*/
     axios
       .get(url)
-      .then(movies => {
-        this.setState({ 
-          displayMovies: true,
-          displayAddMovieForm: false,
-          movies: movies.data
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+      .then(
+        // TODO: FILL ME IN
+      )
+      .catch(
+        // TODO: FILL ME IN
+      )
   }
 
   handleDisplayAddMovie() {
-    this.setState({
-      displayMovies: false,
-      displayAddMovieForm: true
-    })
+    // TODO: FILL ME IN
+    // ** hint: remember that you cannot directly manipulate state
   }
 
   render() {
@@ -49,7 +43,7 @@ class App extends Component {
           handleDisplayAddMovie={this.handleDisplayAddMovie}
         />
         <div>Welcome to Blockbuster</div>
-        {this.state.displayMovies ? <MovieList movies={this.state.movies}/> : null}
+        {this.state.displayMovies ? <MovieList /> : null}
         {this.state.displayAddMovieForm ? <AddMovieForm /> : null}
       </div>
     )

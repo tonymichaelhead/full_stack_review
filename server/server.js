@@ -1,24 +1,15 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const morgan = require('morgan')
-const port = 3000
-const db = require('../db/config')
-const blockbusterRouter = require('./router/blockbuster.router')
+//TODO: fill this page in!
 
-//create an instance of our express server
-const app = express()
+// require your dependencies
+
+// create an instance of your express server
+
 
 // depending on which front end framework you're using, 
-// comment out the one you're not using
-// app.use(express.static('react-client'))
-app.use(express.static('angular-client'))
+// serve your static files
 
-//add middleware
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+// add middleware
 
-app.use('/api', blockbusterRouter)
+// define your routes
 
-app.listen(port, 'localhost', () => {
-  console.log('Blockbuster listening on port: ', port)
-})
+// set up your server to listen on your port of choice

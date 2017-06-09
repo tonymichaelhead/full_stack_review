@@ -3,9 +3,7 @@ import Movie from './movie'
 
 const MovieList = ({ movies }) => (
   <ul>
-    {movies.map((movie, i) => {
-      return <li key={i}><Movie movieData={movie} /></li>
-    })}
+    // TODO: FILL ME IN
   </ul>
 )
 

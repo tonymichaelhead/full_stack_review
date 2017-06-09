@@ -1,8 +1,7 @@
 const router = require('express').Router()
-const movieController = require('../controllers/movie.controller')
 
 router.route('/movies')
-  .get(movieController.getAllMovies)
-  .post(movieController.addMovie)
+  .get(/*TODO: ADD YOUR CONTROLLER*/)
+  .post(/*TODO: ADD YOUR CONTROLLER*/)
 
-module.exports = router
+// **other files will need access to information in here**
