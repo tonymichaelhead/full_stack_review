@@ -4,16 +4,18 @@ import axios from 'axios'
 
 import Navbar from './components/navbar'
 import MovieList from './components/movieList'
+import AddMovieForm from './components/addMovieForm'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       movies: [],
-      displayMovies: false
+      displayMovies: false,
+      displayAddMovieForm: false
     }
     this.handleMovieClick = this.handleMovieClick.bind(this)
-    this.handleAddMovie = this.handleAddMovie.bind(this)
+    this.handleDisplayAddMovie = this.handleDisplayAddMovie.bind(this)
   }
 
   handleMovieClick() {
@@ -23,6 +25,7 @@ class App extends Component {
       .then(movies => {
         this.setState({ 
           displayMovies: true,
+          displayAddMovieForm: false,
           movies: movies.data
         })
       })
@@ -31,8 +34,11 @@ class App extends Component {
       })
   }
 
-  handleAddMovie() {
-
+  handleDisplayAddMovie() {
+    this.setState({
+      displayMovies: false,
+      displayAddMovieForm: true
+    })
   }
 
   render() {
@@ -40,10 +46,11 @@ class App extends Component {
       <div>
         <Navbar 
           handleMovieClick={this.handleMovieClick} 
-          handleAddMovie={this.handleAddMovie}
+          handleDisplayAddMovie={this.handleDisplayAddMovie}
         />
         <div>Welcome to Blockbuster</div>
         {this.state.displayMovies ? <MovieList movies={this.state.movies}/> : null}
+        {this.state.displayAddMovieForm ? <AddMovieForm /> : null}
       </div>
     )
   }
