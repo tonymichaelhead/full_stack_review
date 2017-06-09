@@ -2,10 +2,16 @@
 
 angular.module('blockbuster')
   .controller('AppController', function(movies) {
+    this.fetchedMovies = false
     this.appTitle = 'Blockbuster'
     this.getAllMovies = () => {
-      console.log('inside of set movies')
-      this.movies = movies.getMovies()
+      movies.getMovies()
+        .then((result) => {
+          this.movies = result
+        })
+        .then(() => {
+          this.fetchedMovies = true
+        })
     }
 
   })
