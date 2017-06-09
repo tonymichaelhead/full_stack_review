@@ -23,6 +23,7 @@ angular.module('blockbuster')
     this.displayAddMovieForm = () => {
       console.log('in display')
       this.displayForm = true
+      console.log(this.displayForm)
     }
 
   })

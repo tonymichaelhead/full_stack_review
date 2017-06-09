@@ -14,7 +14,7 @@ angular.module('blockbuster')
       controller: 'AddMovieController',
       controllerAs: 'addMovieCtrl',
       bindToController: true,
-      templateUrl:'src/templates/movieList.html'
+      templateUrl:'src/templates/addMovieForm.html'
     }
   })
   
