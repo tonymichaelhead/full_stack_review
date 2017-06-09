@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html ng-app="blockbusterApp">
-  <head>
-    <title>Blockbuster</title>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles.css" rel="stylesheet">
-    <script src="app/index.js"></script>
-    <script src="app/services/factoryfunction.js"></script>
-    <script src="app/controllers/blockbuster.controller.js"></script>
-  </head>
-  <body ng-controller="homeController">
-    <h1>{{appTitle}}</h1>
-    <div ng-controller="movieController">
-      <ul>
-        <li ng-repeat="movie in movies">
-          <h3>Title: {{movie.title}}</h3>
-          <h5>Number of Copies: {{movie.numberOfCopies}}</h5>
-          <h5>IMDB Rating: {{movie.IMDBrating}}</h5>
-        </li>
-      </ul>
-    </div>
-  </body>
+<html>
+
+<head>
+  <title>Blockbuster</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="styles.css" rel="stylesheet">
+  <!--<script src="node_modules/lodash/lodash.js"></script>
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="../node_modules/lodash/lodash.js"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body>
+  <app ng-app="blockbuster"></app>
+  <script src="src/index.js"></script>
+  <script src="src/components/app.js"></script>
+  <script src="src/services/getMovies.js"></script>
+</body>
+
 </html>
