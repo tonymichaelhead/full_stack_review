@@ -1,30 +1,26 @@
-const Movies = require('../../db/models/movieModel')
+const Movie = require('../../db/models/movieModel')
 
 module.exports = {
   getAllMovies: (req, res) => {
-    Movies.find({}, (err, movies) => {
-      if (err) {
-        console.log(err)
-        res.send(404)
-      } else {
-        res.status(201).send(movies)
-      }
-    })
+    Movie.findAll({})
+      .then((movies) => {
+        res.status(200).send(movies)
+      })
+      .catch((err) => {
+        res.send(err)
+      })
   },
   addMovie: (req, res) => {
-    let newMovie = new Movies({
+    Movie.create({
       title: req.body.title,
       numberOfCopies: req.body.numberOfCopies,
       IMDBrating: req.body.IMDBrating
     })
-    
-    newMovie.save((err) => {
-      if (err) {
-        console.log(err)
-        res.send(404)
-      } else {
-        res.status(200).send(req.body)
-      }
+    .then(movie => {
+      res.status(201).send(movie)
+    })
+    .catch(err => {
+      res.send(404)
     })
   }
 }

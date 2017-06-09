@@ -1,14 +1,12 @@
-const mongoose = require('mongoose')
-mongoose.Promise = require('bluebird')
-const Schema = mongoose.Schema
+const Sequelize = require('sequelize')
+const db = require('../config')
 
-const movieSchema = new Schema({
-  title: String,
-  numberOfCopies: Number,
-  IMDBrating: Number,
-  imageUrl: String
+const Movie = db.define('movies', {
+  title: Sequelize.STRING,
+  numberOfCopies: Sequelize.INTEGER,
+  IMDBrating: Sequelize.INTEGER,
 })
 
-const Movies = mongoose.model('Movie', movieSchema)
+Movie.sync()
 
-module.exports = Movies;
+module.exports = Movie

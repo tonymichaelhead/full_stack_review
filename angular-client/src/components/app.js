@@ -1,17 +1,28 @@
 // angular.module('blockbusterApp', ['blockbusterApp.services', 'blockbusterApp.controllers'])
 
 angular.module('blockbuster')
-  .controller('AppController', function(movies) {
+  .controller('AppController', function(movieService) {
     this.fetchedMovies = false
+    this.displayForm = false
     this.appTitle = 'Blockbuster'
+
     this.getAllMovies = () => {
-      movies.getMovies()
+      movieService.getMovies()
         .then((result) => {
           this.movies = result
         })
         .then(() => {
           this.fetchedMovies = true
         })
+    }
+
+    this.addMovie = () => {
+      
+    }
+
+    this.displayAddMovieForm = () => {
+      console.log('in display')
+      this.displayForm = true
     }
 
   })

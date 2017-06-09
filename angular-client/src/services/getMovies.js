@@ -1,5 +1,5 @@
 angular.module('blockbuster')
-.service('movies', function($http) {
+.service('movieService', function($http) {
   this.getMovies = function() {
     return $http.get('/api/movies')
       .then((result) => {
@@ -8,5 +8,12 @@ angular.module('blockbuster')
       .catch((err) => {
         console.log(err)
       })
+  }
+  this.addMovie = function(data) {
+    $http.post('/api/movies', data)
+      .then((result) => {
+        console.log(result)
+      })
+
   }
 })

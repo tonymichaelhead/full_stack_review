@@ -13,3 +13,4 @@ angular.module('blockbuster')
       templateUrl:'src/templates/movieList.html'
     }
   })
+  

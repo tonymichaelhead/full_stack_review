@@ -1,14 +1,14 @@
-const mongoose = require('mongoose')
+const Sequelize = require('sequelize')
 const config = require('../config')
 
-mongoose.connect(config.mURI, (err) => {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log('Connected to the blockbuster database')
-  }
-})
+const db = new Sequelize(config.dbURL)
 
-const db = mongoose.connection
+db.authenticate()
+  .then(() => {
+    console.log('Successfully connected to the blockbuster database')
+  })
+  .catch((err) => {
+    console.log('Error connecting: ', err)
+  })
 
-module.exports = db;
+module.exports = db
