@@ -1,8 +1,8 @@
 angular.module('blockbuster')
   .controller('AddMovieController', function(movieService) {
     this.movie = {}
-    this.submitForm = () => {
-      console.log('hi')
+    this.submitForm = (data) => {
+      movieService.addMovie(data)
     }
   })
   .directive('addMovieForm', function() {

@@ -13,6 +13,7 @@ angular.module('blockbuster')
         })
         .then(() => {
           this.fetchedMovies = true
+          this.displayForm = false
         })
     }
 
@@ -21,9 +22,8 @@ angular.module('blockbuster')
     }
 
     this.displayAddMovieForm = () => {
-      console.log('in display')
       this.displayForm = true
-      console.log(this.displayForm)
+      this.fetchedMovies = false
     }
 
   })
