@@ -12,12 +12,10 @@ const app = express()
 // comment out the one you're not using
 // app.use(express.static('react-client'))
 app.use(express.static('angular-client'))
-
-//add middleware
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-
-app.use('/api', blockbusterRouter)
+  .use(bodyParser.json())
+  .use(bodyParser.urlencoded({ extended: true }))
+  .use(morgan('dev'))
+  .use('/api', blockbusterRouter)
 
 app.listen(port, 'localhost', () => {
   console.log('Blockbuster listening on port: ', port)
