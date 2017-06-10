@@ -16,11 +16,7 @@ angular.module('blockbuster')
           this.displayForm = false
         })
     }
-
-    this.addMovie = () => {
-      
-    }
-
+    
     this.displayAddMovieForm = () => {
       this.displayForm = true
       this.fetchedMovies = false
