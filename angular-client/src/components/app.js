@@ -2,38 +2,10 @@
 
 angular.module('blockbuster')
   .controller('AppController', function(movieService) {
-    this.fetchedMovies = false
-    this.displayForm = false
-    this.appTitle = 'Blockbuster'
-
-    this.getAllMovies = () => {
-      movieService.getMovies()
-        .then((result) => {
-          this.movies = result
-        })
-        .then(() => {
-          this.fetchedMovies = true
-        })
-    }
-
-    this.addMovie = () => {
-      
-    }
-
-    this.displayAddMovieForm = () => {
-      console.log('in display')
-      this.displayForm = true
-      console.log(this.displayForm)
-    }
-
+    //TODO: fill me in
   })
   .directive('app', function() {
     return {
-      scope: {},
-      restrict: 'E',
-      controller: 'AppController',
-      controllerAs: 'appCtrl',
-      bindToController: true,
-      templateUrl:'src/templates/app.html'
+      //TODO: fill me in
     }
   })

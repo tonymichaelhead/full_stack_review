@@ -1,20 +1,9 @@
 angular.module('blockbuster')
   .controller('AddMovieController', function(movieService) {
-    this.movie = {}
-    this.submitForm = () => {
-      console.log('hi')
-    }
+    //TODO: fill me in
   })
   .directive('addMovieForm', function() {
     return {
-      scope: {
-        
-      },
-      restrict: 'E',
-      controller: 'AddMovieController',
-      controllerAs: 'addMovieCtrl',
-      bindToController: true,
-      templateUrl:'src/templates/addMovieForm.html'
-    }
+      //TODO: fill me in
   })
   
