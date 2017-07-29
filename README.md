@@ -7,9 +7,17 @@ In this fullstack review application, we will be bringing Blockbuster back from 
 * MySQL
 * Sequelize
 * React / Angular
+(This full stack review does not use an external API)
 
 ## Task
 Go through the file structure and fill in the "TODO"s throughout the application
+**Note about the branches:
+There are three branches in this repo:
+1. Barebones Scaffold - If you are feeling comfortable building an app with a skeleton given to you, feel free to check out into this branch to practice with only the barebones information given to you.
+2. Master - This branch has basic information already filled in and all you will be required to do is fill in the TODO's
+3. Solution - Self exlanatory
+
+Feel free to check into the branch that matches your current comfort level!
 
 ## To Do List:
 
