@@ -11,11 +11,15 @@ class AddMovieForm extends Component {
 
   //TODO: fill in any additional functions you may need
 
+  
+
   render() {
     return (
       <div>
-        // TODO: FILL ME IN
-        // ** hint: create a form 
+        <form>
+          <input type="text"/>
+          <input type="submit"/>
+        </form> 
       </div>
     )
   }
