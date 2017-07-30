@@ -15,24 +15,26 @@ class App extends Component {
       displayAddMovieForm: false
     }
     // TODO: fill in your function binds (if necessary)
-
+    this.handleMovieClick = this.handleMovieClick.bind(this);
+    this.handleDisplayAddMovie = this.handleDisplayAddMovie.bind(this);
   }
 
   handleMovieClick() {
-    let url = /*TODO: fill me in*/
+    let url = '/api/movies'
     axios
       .get(url)
       .then(
         // TODO: FILL ME IN
+        //update this.state.movies with fetched data
+        
       )
-      .catch(
-        // TODO: FILL ME IN
-      )
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   handleDisplayAddMovie() {
-    // TODO: FILL ME IN
-    // ** hint: remember that you cannot directly manipulate state
+    this.setState({ displayAddMovieForm: !this.state.displayAddMovieForm });
   }
 
   render() {
