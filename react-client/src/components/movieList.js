@@ -3,11 +3,9 @@ import Movie from './movie'
 
 const MovieList = ({ movies }) => (
   <ul>
-    <li>hey</li>
-    {/* {props.movies.map(movie => (<li>heyyyy</li>))} */}
+     {movies.map(movie => <li><Movie movie={movie}/></li>)} 
   </ul>
 )
 
 export default MovieList
 
-{/* <Movie movie={movie}/> */}

@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 
 const Movie = (props) => (
   <div className="single-movie">
-    <span>Title: {props.movie.title}</span>
-    <span>Copies sold: {props.movie.copies}</span>
-    <span>rating: {props.movie.rating}</span>
+    <span>
+      <strong>Title: </strong>{props.movie.title}<br/>
+      <strong>Copies sold: </strong>{props.movie.copies}<br/>
+      <strong>rating: </strong>{props.movie.rating}<br/>
+    </span>
   </div>
 )
 
