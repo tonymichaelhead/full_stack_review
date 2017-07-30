@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 
-const Movie = (/*TODO: FILL ME IN*/) => (
+const Movie = (props) => (
   <div className="single-movie">
-    TODO: FILL ME IN
+    <span>Title: {props.movie.title}</span>
+    <span>Copies sold: {props.movie.copies}</span>
+    <span>rating: {props.movie.rating}</span>
   </div>
 )
 
 export default Movie
+
+{/* {
+    title: String,
+    copies: Number,
+    rating: Number,
+} */}

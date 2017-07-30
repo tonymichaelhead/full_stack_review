@@ -20,21 +20,28 @@ class App extends Component {
   }
 
   handleMovieClick() {
-    let url = '/api/movies'
-    axios
-      .get(url)
-      .then(
-        // TODO: FILL ME IN
-        //update this.state.movies with fetched data
-        
-      )
-      .catch(err => {
-        console.log(err);
-      })
+    if (!this.state.displayMovies) {
+      let url = '/api/movies'
+      axios
+        .get(url)
+          .then(results => {
+            console.log(results.data);
+            this.setState({ movies: results.data, displayMovies: true });
+          })
+          .catch(err => {
+            console.log(err);
+          })
+    } else {
+      this.setState({ displayMovies: false });
+    }
   }
 
   handleDisplayAddMovie() {
     this.setState({ displayAddMovieForm: !this.state.displayAddMovieForm });
+  }
+
+  componentDidMount(){
+    // this.handleMovieClick();
   }
 
   render() {
@@ -45,7 +52,7 @@ class App extends Component {
           handleDisplayAddMovie={this.handleDisplayAddMovie}
         />
         <div>Welcome to Blockbuster</div>
-        {this.state.displayMovies ? <MovieList /> : null}
+        {this.state.displayMovies ? <MovieList movies={this.state.movies}/> : null}
         {this.state.displayAddMovieForm ? <AddMovieForm /> : null}
       </div>
     )
