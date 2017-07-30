@@ -9,16 +9,31 @@ class AddMovieForm extends Component {
       copies: '',
       rating: '',
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeTitle = this.handleChangeTitle.bind(this);
+    this.handleChangeCopies = this.handleChangeCopies.bind(this);
+    this.handleChangeRating = this.handleChangeRating.bind(this);
   }
 
   //create a handleChange for each form input
-  handleChange(e) {
+  handleChangeTitle(e) {
     e.preventDefault();
-    this.setState({
-
+    this.setState({ title: e.target.value }, () => {
+      console.log('title: ', this.state.title);
     })
-    console.log(this.state)
+  }
+
+  handleChangeCopies(e) {
+    e.preventDefault();
+    this.setState({ copies: e.target.value }, () => {
+      console.log('copies: ', this.state.copies);
+    })
+  }
+
+  handleChangeRating(e) {
+    e.preventDefault();
+    this.setState({ rating: e.target.value }, () => {
+      console.log('rating: ', this.state.rating);
+    })
   }
   
 
@@ -26,10 +41,10 @@ class AddMovieForm extends Component {
     return (
       <div>
         <form>
-          <input type="text" onChange={this.handleChange}/><br/>
-          <input type="text" onChange={this.handleChange}/><br/>
-          <input type="text" onChange={this.handleChange}/><br/>
-          <input type="submit" onSubmit={this.props.handleFormSubmit}/>
+          <input type="text" onChange={this.handleChangeTitle} value={this.state.title}/><br/>
+          <input type="text" onChange={this.handleChangeCopies}/><br/>
+          <input type="text" onChange={this.handleChangeRating}/><br/>
+          <input type="submit" onSubmit={this.props.handleFormSubmit(this.state.)}/>
         </form> 
       </div>
     )
