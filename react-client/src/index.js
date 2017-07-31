@@ -17,7 +17,6 @@ class App extends Component {
     // TODO: fill in your function binds (if necessary)
     this.handleMovieClick = this.handleMovieClick.bind(this);
     this.handleDisplayAddMovie = this.handleDisplayAddMovie.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.getMovies = this.getMovies.bind(this);
   }
 
@@ -42,19 +41,6 @@ class App extends Component {
         })
   }
 
-  handleFormSubmit() {
-    let url = '/api/movies'
-    axios
-      .post(url)
-        .then(results => {
-          console.log('successfully POSTED');
-          this.getMovies();
-        })
-        .catch(err => {
-          console.log(err);
-        })
-  }
-
   handleDisplayAddMovie() {
     this.setState({ displayAddMovieForm: !this.state.displayAddMovieForm });
   }
@@ -72,7 +58,7 @@ class App extends Component {
         />
         <div>Welcome to Blockbuster</div>
         {this.state.displayMovies ? <MovieList movies={this.state.movies}/> : null}
-        {this.state.displayAddMovieForm ? <AddMovieForm handleFormSubmit={this.handleFormSubmit}/> : null}
+        {this.state.displayAddMovieForm ? <AddMovieForm getMovies={this.getMovies}/> : null}
       </div>
     )
   }

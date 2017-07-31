@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 
 const movieSchema = mongoose.Schema({
     title: String,
-    copies: Number,
-    rating: Number,
+    copies: String,
+    rating: String,
 });
 
 let Movie = mongoose.model('Movie', movieSchema);
