@@ -52,11 +52,11 @@ class App extends Component {
   render() {
     return(
       <div>
+        <div><h1>Welcome to Blockbuster</h1></div>
         <Navbar 
           handleMovieClick={this.handleMovieClick} 
           handleDisplayAddMovie={this.handleDisplayAddMovie}
         />
-        <div>Welcome to Blockbuster</div>
         {this.state.displayMovies ? <MovieList movies={this.state.movies}/> : null}
         {this.state.displayAddMovieForm ? <AddMovieForm getMovies={this.getMovies}/> : null}
       </div>
